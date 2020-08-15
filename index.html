@@ -17,28 +17,42 @@
 <body>
     
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">SimpleDict</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">SimpleDic</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navSearchBar" aria-controls="navSearchBar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
       
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        <div class="collapse navbar-collapse" id="navSearchBar">
+            <form class="form-inline my-2 my-lg-0 ml-auto">
+                <input class="form-control mr-sm-2" id="searchBox" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" id="searchBtn" type="button">Search</button>
             </form>
         </div>
       </nav>
       
     <main role="main" class="container">
-      
-        <div class="">
+
+        <div class="alert alert-danger" role="alert" id="errorAlert" style="display: none;">
+            An error occurred.
+        </div>
+        
+        <div class="ml-auto" id="spinnerContainer" style="display:none;">
+            <div class="spinner-border text-primary mx-auto" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        
+        
+        <div class="sm-12" id="resultsContainer">
+            <h3>Type a word in the search box.</h3>
+            <!-- dynamic search results here -->
         </div>
       
     </main>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.5.1.min.js"><\/script>')</script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+    <script src="/libs/js/script.js"></script>
       
       
 </body>
