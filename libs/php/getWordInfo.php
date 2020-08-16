@@ -1,9 +1,11 @@
 <?php
 	// ini_set('display_errors', 'On');
 	// error_reporting(E_ALL);
+	require("./env.php");
 	$executionStartTime = microtime(true) / 1000;
 
 	$ch = curl_init();
+	$apiKey = getenv("APIKEY");
 
 	$url = "https://wordsapiv1.p.rapidapi.com/words/" . $_REQUEST['word'];
 	curl_setopt_array($ch, array(
@@ -17,7 +19,7 @@
 		CURLOPT_CUSTOMREQUEST => "GET",
 		CURLOPT_HTTPHEADER => array(
 			"x-rapidapi-host: wordsapiv1.p.rapidapi.com",
-			"x-rapidapi-key: 625da2911bmsh57780aa52292aa2p1857fdjsn8b01e4caf2cf"
+			"x-rapidapi-key: ".$apiKey
 		),
 	));
 
@@ -64,6 +66,7 @@
 			$output['status']['returnedIn'] = ($endtime - $executionStartTime);
 			$output['word'] = $decode['word'];
 			$output['data'] = $temp;
+			$output['key'] = $apiKey;
 
 		}
 		
